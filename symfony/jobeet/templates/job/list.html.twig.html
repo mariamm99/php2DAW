@@ -1,0 +1,56 @@
+<article>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>{% extends 'base.html.twig' %}
+
+        {% block body %}
+        {% include 'job/_job_history.html.twig' with {'historyJobs': historyJobs} only %}
+        {% for category in categories %}
+        <h4><a
+                href="https://moodle.iesgrancapitan.org/pluginfile.php/36658/mod_resource/content/1/%7B%7B%20path(&#39;category.show&#39;,%20%7Bslug:%20category.slug%7D)%20%7D%7D">{{
+                category.name }}</a></h4>
+
+        {% include 'job/table.html.twig' with {
+        'jobs': category.activeJobs|slice(0, max_jobs_on_homepage)
+        } only %}
+        {% endfor %}
+        {% endblock %}
+
+
+
+        {# Plantilla inicial con el listado de los trabajos, antes de sustituirla por los trabajos por categoriías
+        {% extends 'base.html.twig' %}
+
+        {% block body %}
+
+
+        {% for job in jobs %}
+
+        {% endfor %}
+        <table class="table text-center">
+            <tbody>
+                <tr>
+                    <th class="active text-center">City</th>
+                    <th class="active text-center">Position</th>
+                    <th class="active text-center">Company</th>
+                </tr>
+                <tr>
+                    <td>{{ job.location }}</td>
+                    <td>
+                        <a
+                            href="https://moodle.iesgrancapitan.org/pluginfile.php/36658/mod_resource/content/1/%7B%7B%20path(&#39;job.show&#39;,%20%7Bid:%20job.id%7D)%20%7D%7D">
+                            {{ job.position }}
+                        </a>
+                    </td>
+                    <td>{{ job.company }}</td>
+                </tr>
+            </tbody>
+        </table>
+        {% endblock %}
+        #}
+    </body>
+
+    </html>

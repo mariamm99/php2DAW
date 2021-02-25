@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+    background-color: lightblue;
+}
+fieldset{
+    text-align: center;
+    border: 3px solid blue;
+    width: 50%;
+    margin-left: 25%;
+    background-color: whitesmoke;
+}
+h1{
+    text-align: center;
+}
+form{
+    text-align: center;
+}

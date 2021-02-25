@@ -1,0 +1,32 @@
+{% extends 'layout.twig' %} 
+{% block body %} 
+    <article class="blog"> 
+
+        <form name="formUsers" method="post" action="" enctype="multipart/form-data"> 
+            <div id="enquiry"> 
+            <div>
+                 <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+             </div> 
+     
+            <div> 
+                 <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div> 
+
+            <div>
+            <label for="Subject">Subject</label>
+                <input type="text" name="Subject" id="Subject">
+            </div>
+
+            <div>
+                <label for="body">Body</label>
+                <input type="text" name="body" id="body">
+            </div>
+
+            <input type="submit" id="enquiry_save" name="enquiry[save]"> 
+            </div>
+            </div>
+        </form>
+     </article>
+{% endblock %}

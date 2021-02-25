@@ -1,0 +1,25 @@
+{% extends 'layout.twig' %} 
+{% block body %} 
+    {% for blog in blogs %} 
+    <article class="blog"> 
+    <div class="date">
+        <time datetime="{{ blog.created_at|date('c') }}">{{ blog.created_at|date('l, F j, Y') }}</time>
+    </div> 
+    <header> 
+    {# {{blog.id}}{{ path('_show', {'id': {{blog.id}}}) }} #}
+        <h2><a href="/show">{{ blog.title }}</a></h2> 
+      {# "{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}" #}
+    </header> 
+    <img src="img/{{blog.image}}" /> 
+    <div class="snippet"> 
+        <p>{{ blog.blog(600) }}</p> 
+        <p class="continue"><a href="#">Continue reading...</a></p>
+    </div>
+    <footer class="meta">
+    
+        <p>Comments: <a href="#"> {{ blog.getComments|length }}</a></p> 
+        <p>Posted by <span class="highlight">{{ blog.author }}</span> at {{ blog.created_at|date('h:ia') }}</p> 
+        <p>Tags: <span class="highlight">{{ blog.tags }}</span></p> 
+    </footer> </article> {% else %} <p>There are no blog entries for symblog</p> 
+{% endfor %} 
+{% endblock %}

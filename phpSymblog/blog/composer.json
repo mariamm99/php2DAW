@@ -1,0 +1,18 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "App\\Models\\": "app/Model/",
+            "App\\Controllers\\": "app/controller/"
+        }
+    },
+    "require": {
+        "illuminate/database": "^8.25",
+        "laminas/laminas-diactoros": "^2.5",
+        "aura/router": "^3.1",
+        "twig/twig": "^3.2",
+        "respect/validation": "^2.2",
+        "vlucas/phpdotenv": "^5.3",
+        "swiftmailer/swiftmailer": "^6.2"
+    }
+ }
