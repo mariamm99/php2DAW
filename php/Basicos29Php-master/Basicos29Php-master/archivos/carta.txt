@@ -1,3 +1,0 @@
-Estimad@ {nombre},
-con direccion en {direccion},
-Se le escribe a {nombre} con actual domicilio en {direccion} porque es usted una persona maravillosa.

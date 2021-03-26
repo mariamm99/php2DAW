@@ -1,3 +1,0 @@
-usuario,contraseña
-pepe,viyuela
-uno,dos
